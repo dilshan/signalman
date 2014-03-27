@@ -1,0 +1,7 @@
+<resources>
+<style name="MyTheme.NoTitleBar.SplashWindow" parent="@android:Theme.Black">
+<item name="android:windowBackground">@drawable/loading</item>
+<item name="android:windowNoTitle">true</item>
+<item name="android:windowFullscreen">true</item>
+</style>
+</resources>

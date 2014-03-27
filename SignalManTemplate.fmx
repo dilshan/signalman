@@ -1,0 +1,202 @@
+object frmMain: TfrmMain
+  Left = 0
+  Top = 0
+  Caption = 'Header Footer Form'
+  ClientHeight = 402
+  ClientWidth = 320
+  FormFactor.Width = 1440
+  FormFactor.Height = 900
+  FormFactor.Orientations = [soPortrait]
+  FormFactor.Devices = [dkDesktop]
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnKeyDown = FormKeyDown
+  DesignerMobile = True
+  DesignerWidth = 320
+  DesignerHeight = 427
+  DesignerDeviceName = '2.7 QVGA Android Phone'
+  DesignerOrientation = 0
+  DesignerOSVersion = ''
+  object tbHeader: TToolBar
+    Height = 48.000000000000000000
+    TabOrder = 0
+    Width = 320.000000000000000000
+    object lblHeader: TLabel
+      Align = alContents
+      Font.Style = [fsBold]
+      StyledSettings = [ssFamily, ssSize, ssFontColor]
+      Height = 48.000000000000000000
+      StyleLookup = 'toollabel'
+      Text = 'SignalMan'
+      TextAlign = taCenter
+      Width = 320.000000000000000000
+    end
+  end
+  object tbFooter: TToolBar
+    Align = alBottom
+    Height = 48.000000000000000000
+    Position.Y = 354.000000000000000000
+    StyleLookup = 'bottomtoolbar'
+    TabOrder = 1
+    Width = 320.000000000000000000
+    object btnStop: TButton
+      Align = alLeft
+      Height = 42.000000000000000000
+      Margins.Left = 8.000000000000000000
+      Margins.Top = 3.000000000000000000
+      Margins.Right = 8.000000000000000000
+      Margins.Bottom = 3.000000000000000000
+      Position.X = 8.000000000000000000
+      Position.Y = 3.000000000000000000
+      TabOrder = 0
+      Text = 'Stop'
+      Trimming = ttCharacter
+      Width = 97.000000000000000000
+      OnClick = btnStopClick
+    end
+    object btnOK: TButton
+      Align = alRight
+      Height = 42.000000000000000000
+      Margins.Top = 3.000000000000000000
+      Margins.Right = 8.000000000000000000
+      Margins.Bottom = 3.000000000000000000
+      Position.X = 215.000000000000000000
+      Position.Y = 3.000000000000000000
+      TabOrder = 1
+      Text = 'Start'
+      Trimming = ttCharacter
+      Width = 97.000000000000000000
+      OnClick = btnOKClick
+    end
+  end
+  object pnlBaseLabel: TPanel
+    Align = alTop
+    Height = 41.000000000000000000
+    Position.Y = 48.000000000000000000
+    Width = 320.000000000000000000
+    TabOrder = 2
+    object lblEditTitle: TLabel
+      Height = 33.000000000000000000
+      Position.X = 8.000000000000000000
+      Position.Y = 8.000000000000000000
+      Text = 'Message to transmit:'
+      Width = 185.000000000000000000
+      Trimming = ttCharacter
+    end
+  end
+  object pnlEditor: TPanel
+    Align = alClient
+    Height = 109.000000000000000000
+    Width = 320.000000000000000000
+    TabOrder = 3
+    object txtMsg: TMemo
+      Touch.InteractiveGestures = [igPan, igLongTap, igDoubleTap]
+      Align = alClient
+      Height = 101.000000000000000000
+      Margins.Left = 12.000000000000000000
+      Margins.Top = 4.000000000000000000
+      Margins.Right = 12.000000000000000000
+      Margins.Bottom = 4.000000000000000000
+      TabOrder = 0
+      Width = 296.000000000000000000
+      HideSelection = False
+      KeyboardType = vktAlphabet
+      WordWrap = True
+      CheckSpelling = True
+    end
+  end
+  object pnlTools: TPanel
+    Align = alBottom
+    Height = 156.000000000000000000
+    Position.Y = 198.000000000000000000
+    Width = 320.000000000000000000
+    TabOrder = 4
+    object pnlEditUtil: TPanel
+      Align = alTop
+      Height = 49.000000000000000000
+      Width = 320.000000000000000000
+      TabOrder = 0
+      object pnlClear: TPanel
+        Align = alRight
+        Height = 49.000000000000000000
+        Position.X = 208.000000000000000000
+        Width = 112.000000000000000000
+        TabOrder = 0
+        object btnClear: TButton
+          Height = 42.000000000000000000
+          Position.X = 7.000000000000000000
+          Position.Y = 5.000000000000000000
+          TabOrder = 0
+          Text = 'Clear'
+          Trimming = ttCharacter
+          Width = 97.000000000000000000
+          OnClick = btnClearClick
+        end
+      end
+      object lblMode: TLabel
+        Height = 25.000000000000000000
+        Position.X = 8.000000000000000000
+        Position.Y = 63.000000000000000000
+        Text = 'Output Mode:'
+        Width = 121.000000000000000000
+        Trimming = ttCharacter
+      end
+    end
+    object pnlToolOptions: TPanel
+      Height = 107.000000000000000000
+      Position.X = 136.000000000000000000
+      Position.Y = 49.000000000000000000
+      Width = 184.000000000000000000
+      TabOrder = 1
+      object cmbMode: TComboBox
+        DisableFocusEffect = False
+        DropDownCount = 2
+        Height = 32.000000000000000000
+        ItemIndex = 0
+        Position.X = 6.000000000000000000
+        Position.Y = 11.000000000000000000
+        TabOrder = 0
+        Width = 163.000000000000000000
+        object TListBoxItem
+          Height = 19.000000000000000000
+          IsSelected = True
+          Text = 'Flasher'
+          Width = 19.000000000000000000
+        end
+        object TListBoxItem
+          Height = 19.000000000000000000
+          Text = 'Audible'
+          Width = 19.000000000000000000
+        end
+      end
+      object tbDelay: TTrackBar
+        Height = 32.000000000000000000
+        Max = 500.000000000000000000
+        Min = 100.000000000000000000
+        Orientation = orHorizontal
+        Position.X = 8.000000000000000000
+        Position.Y = 64.000000000000000000
+        TabOrder = 1
+        Value = 150.000000000000000000
+        Width = 163.000000000000000000
+      end
+    end
+    object lblSpeed: TLabel
+      Height = 25.000000000000000000
+      Position.X = 8.000000000000000000
+      Position.Y = 119.000000000000000000
+      Text = 'Speed (ms):'
+      Width = 121.000000000000000000
+      Trimming = ttCharacter
+    end
+  end
+  object camControl: TCameraComponent
+    Kind = ckBackCamera
+    Left = 24
+    Top = 97
+  end
+  object mediaPlayer: TMediaPlayer
+    Left = 96
+    Top = 97
+  end
+end
